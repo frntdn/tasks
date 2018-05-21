@@ -3,7 +3,6 @@
 let result
 /**
  * Разворачиваем односвязный список на месте
- * Обогащаем узел методом invert
  */
 class Node {
   constructor(value, next) {
@@ -16,10 +15,8 @@ class Node {
   }
 
   invert(previous) {
-    if (this.hasNext)
-      this.next.invert(this)
-    if (this.next === null) // иначе мы не увидим результат
-      result = this
+    if (this.hasNext) this.next.invert(this)
+    if (this.next === null) result = this // записываем result
     this.next = previous
   }
 }

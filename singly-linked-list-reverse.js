@@ -1,4 +1,5 @@
 'use strict'
+
 /**
  * Разворачиваем односвязный список
  */
@@ -17,8 +18,7 @@ const list = new Node(1, new Node(2, new Node(3, new Node(4, new Node(5, null)))
  * 2) Каждому последующему ставим значение предыдущего
  */
 function reverseList(first) {
-  if (first === null || first.next === null)
-    return first
+  if (first === null || first.next === null) return first
   let result = new Node(first.value, null)
   while (first.next !== null) {
     first = first.next
